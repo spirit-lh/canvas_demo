@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script>
+			var ctx = document.getElementById('canvas').getContext('2d');
+//        ctx.beginPath();
+//ctx.moveTo(20,20);
+//ctx.lineTo(200,20);
+//ctx.lineTo(120,120);
+//ctx.closePath(); // draws last line of the triangle
+//ctx.stroke();
+
+//ctx.beginPath();
+//ctx.moveTo(0,0);
+//ctx.lineWidth = 15;
+//ctx.lineCap = "round";
+//ctx.lineTo(100, 100);
+//ctx.stroke();
+
+//ctx.lineWidth = 10;
+//ctx.lineJoin = "round";
+//ctx.lineCap = "round";
+//ctx.beginPath();
+//ctx.moveTo(0,0);
+//ctx.lineTo(200, 100);
+//ctx.lineTo(300,0);
+//ctx.stroke();
+
+//ctx.setLineDash([5, 15]);
+//ctx.beginPath();
+//ctx.moveTo(0,100);
+//ctx.lineTo(400, 100);
+//ctx.stroke();
+
+
+//for (var i=0;i<6;i++){
+//for (var j=0;j<6;j++){
+//  ctx.strokeStyle = 'rgb(0,' + Math.floor(255-42.5*i) + ',' + 
+//                    Math.floor(255-42.5*j) + ')';
+//  ctx.beginPath();
+//  ctx.arc(12.5+j*25,12.5+i*25,10,0,Math.PI*2,true);
+//  ctx.stroke();
+//}
+//}
+
+
+//var gradient = ctx.createLinearGradient(0,0,200,0);
+//gradient.addColorStop(0,"green");
+//gradient.addColorStop(1,"white");
+//ctx.fillStyle = gradient;
+//ctx.fillRect(10,10,200,100);
+
+
+ctx.lineWidth = 10;
+ctx.lineJoin = "round";
+ctx.lineCap = "round";
+//ctx.strokeStyle = '#FF5B16';
+//ctx.beginPath();
+////ctx.moveTo(0,100);
+//ctx.lineTo(200, 100);
+//ctx.lineTo(400,100);
+//ctx.stroke();
+for(var j=0;j<14;j++){
+	ctx.strokeStyle =  'rgb(38,' + Math.floor(255-30.5*j) + ',23)';
+    ctx.beginPath();
+    ctx.lineTo(10*j,20*j);
+    ctx.lineTo(100*j*5,200*j*5);
+    ctx.stroke();
+}
+</script>
+	</body>
+</html>

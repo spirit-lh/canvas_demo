@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-color: #eee;
+			}
+			
+			canvas {
+				display: block;
+				margin: 80px auto;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas"></canvas>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			canvas.width = 600;
+			canvas.height = 600;
+			var canvasWidth = canvas.width;
+			var canvasHeight = canvas.height;
+			var step = 30;
+
+			/* 网格 */
+			ctx.beginPath();
+			for(var i = 1, iLen = canvasWidth / step; i < iLen; i++) {
+				ctx.moveTo(i * step, 0);
+				ctx.lineTo(i * step, canvasHeight);
+
+				ctx.moveTo(0, i * step);
+				ctx.lineTo(canvasHeight, i * step);
+			}
+			ctx.strokeStyle = '#efefef';
+			ctx.stroke();
+
+			/**
+			 * 开始绘制一条新路径
+			 * 这个路子里有两个子路径
+			 * 可以把closePath()和fill()分别注释或者取消注释看看
+			 */
+			ctx.beginPath();
+			ctx.moveTo(60, 60);
+			ctx.lineTo(300, 60);
+			ctx.lineTo(160, 320);
+			// ctx.closePath(); 
+
+			ctx.moveTo(540, 540);
+			ctx.lineTo(300, 540);
+			ctx.lineTo(440, 280);
+			// ctx.closePath();
+
+			ctx.lineWidth = 20;
+			ctx.strokeStyle = '#000';
+			ctx.fillStyle = '#f40';
+			ctx.stroke();
+			ctx.fill();
+		</script>
+	</body>
+
+</html>
